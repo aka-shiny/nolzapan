@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from nolzapan import local_settings
+from typing import List
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +9,7 @@ SECRET_KEY = local_settings.SECRET_KEY_NOLZAPAN
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = []
 
 
 INSTALLED_APPS = [
@@ -54,7 +55,9 @@ DATABASES = local_settings.DATABASES_SQLITE_NOLZAPAN
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": (
+            "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+        ),
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
