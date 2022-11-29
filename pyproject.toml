@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "nolzapan"
+version = "0.1.0"
+description = "shiny project"
+authors = ["shiny <aka.shiny.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+asgiref = "3.5.2"
+black = "^22.10.0"
+isort = "^5.10.1"
+mypy = "^0.991"
+mypy-extensions = "^0.4.3"
+typing-extensions = "^4.4.0"
+django-stubs = "^1.13.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+python_version = 3.11
+strict = true
+
+[[tool.mypy.overrides]]
+module = "*.migrations.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "manage"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "manage"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "nolzapan.settings"
+
+[tool.isort]
+profile = "black"
+
+[flake8]
+max-line-length = 88
+extend-ignore = 'E203'정
