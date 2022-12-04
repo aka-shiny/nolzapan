@@ -1,7 +1,11 @@
 from pathlib import Path
 
+import django_stubs_ext
+
 from nolzapan import local_settings
 from typing import List
+
+django_stubs_ext.monkeypatch()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
